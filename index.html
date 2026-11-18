@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="google-site-verification" content="bOzPB6TDZ_N4amyvL6kYLYRj2efEwrUrCHGb9Wasdlg" />
+<title>المزارع الصغير | مشتل نباتات الزينة</title>
+<style>
+:root{--green:#145b3b;--green2:#20784c;--mint:#eaf5ed;--ink:#193b2b;--muted:#718277;--gold:#d7a94b}
+*{box-sizing:border-box}body{margin:0;background:#f7faf7;color:var(--ink);font-family:Tahoma,Arial,sans-serif}
+header{background:linear-gradient(120deg,#103d2b,#20784c);color:white;padding:16px 5%;position:sticky;top:0;z-index:5;box-shadow:0 4px 18px #123b2422}
+.nav{max-width:1250px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{font-size:23px;font-weight:bold}.brand small{display:block;font-size:11px;color:#c9e9d3;font-weight:normal;margin-top:5px}
+nav{display:flex;gap:8px;flex-wrap:wrap}
+.language-wrap{display:flex;align-items:center;gap:8px;color:#e7f4e9;font-size:13px}
+.language-wrap select{padding:8px 10px;border-radius:10px;border:1px solid #ffffff55;background:#fff;color:#193b2b}
+.contact-panel{background:linear-gradient(120deg,#123d2b,#20784c);color:#fff;border-radius:18px;padding:25px;margin:25px 0;text-align:center}
+.contact-panel p{line-height:1.9;color:#e1f1e5}
+.contact-panel .btn{background:#fff;color:#145b3b}
+.card img{background:linear-gradient(135deg,#e5f2e8,#f7faf7);object-fit:cover}
+.image-status{font-size:11px;color:#829187;margin-top:5px}
+nav a{color:white;text-decoration:none;padding:9px 12px;border-radius:9px}nav a:hover{background:#ffffff20}
+.hero{background:linear-gradient(120deg,#e5f4e8,#f8fbf5);padding:54px 18px;text-align:center}
+.hero h1{font-size:clamp(28px,5vw,48px);margin:0 0 14px;color:#145b3b}.hero p{max-width:760px;margin:auto;line-height:2;color:#597263}
+.wrap{max-width:1250px;margin:28px auto;padding:0 18px}
+.searchrow{display:flex;gap:10px;max-width:900px;margin:25px auto;flex-wrap:wrap}
+input,select{font:inherit;border:1px solid #d6e4d9;border-radius:12px;padding:14px;background:white;color:var(--ink);min-width:0}
+#search{flex:1;min-width:220px}
+button,.btn{border:0;border-radius:11px;padding:13px 18px;background:var(--green2);color:white;font:inherit;cursor:pointer;text-decoration:none;display:inline-block}
+button:hover,.btn:hover{filter:brightness(.94)}.light{background:#e4f1e7;color:var(--green)}
+.section-title{display:flex;align-items:end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:30px 0 16px}
+.section-title h2{margin:0;color:var(--green);font-size:25px}.muted{color:var(--muted);font-size:13px}
+.filters{display:flex;gap:8px;overflow:auto;padding:5px 0 14px}.filters button{white-space:nowrap;background:#e7f1e9;color:#225d3d;padding:10px 14px}.filters button.active{background:var(--green2);color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:17px}
+.card{background:white;border:1px solid #e4ece5;border-radius:17px;overflow:hidden;box-shadow:0 5px 18px #173d2410;display:flex;flex-direction:column}
+.card img{width:100%;height:190px;object-fit:cover;background:#edf4ee;cursor:pointer}.cardbody{padding:15px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card h3{margin:0;color:#175d3b;font-size:18px}.latin{font-size:12px;color:#7a8b7e;direction:ltr;text-align:right;min-height:16px}
+.pill{font-size:11px;background:#edf6ef;color:#286744;padding:5px 9px;border-radius:20px;display:inline-block}
+.price{font-size:16px;font-weight:bold;color:#a36e16}.plant-desc{font-size:13px;line-height:1.8;color:#586e60;margin:9px 0}.card-actions{display:flex;gap:8px;margin-top:auto}.card-actions button{flex:1;padding:10px 7px;font-size:13px}
+.notice{background:#fff8e9;border:1px solid #f0dfb6;padding:13px 15px;border-radius:12px;color:#75551c;line-height:1.8;margin:16px 0}
+.store,.admin{background:white;border:1px solid #e4ece5;border-radius:18px;padding:20px;margin:25px 0}
+.admin-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:12px}
+.admin-grid label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.modal{display:none;position:fixed;inset:0;background:#07180fbb;z-index:20;overflow:auto;padding:18px}
+.modalbox{max-width:850px;background:white;border-radius:18px;margin:20px auto;overflow:hidden}
+.modalhead{background:var(--green);color:white;padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+.modalbody{padding:22px;line-height:2}.modalbody img{width:100%;max-height:430px;object-fit:contain;background:#edf4ee;border-radius:12px}
+.detailgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.detail{background:#f1f7f2;padding:12px;border-radius:10px}.detail b{display:block;color:var(--green)}
+footer{background:#103d2b;color:#e6f3e9;text-align:center;padding:28px;margin-top:50px;line-height:2}
+.empty{text-align:center;padding:35px;color:var(--muted);grid-column:1/-1}
+@media(max-width:650px){.hero{padding:38px 15px}header{position:static}.brand{font-size:20px}.wrap{padding:0 12px}.nav{align-items:flex-start}.language-wrap{width:100%;justify-content:flex-end}}
+</style></head>
+<body>
+<header><div class="nav">
+ <div class="brand">🌿 المزارع الصغير<small>مشتل متخصص في نباتات الزينة</small></div>
+ <label class="language-wrap"><span id="languageLabel">اللغة</span><select id="languageSelect" aria-label="Language"><option value="ar">العربية</option><option value="en">English</option><option value="it">Italiano</option><option value="ru">Русский</option></select></label>
+ <nav><a href="#home">الرئيسية</a><a href="#catalog">النباتات</a><a href="#store">المتجر</a><a href="#contact">تواصل معنا</a></nav>
+</div></header>
+<section class="hero" id="home">
+ <h1>خلّي الطبيعة أقرب ليك 🌱</h1>
+ <p>موسوعة متخصصة تضم 390 نوعًا وصنفًا من نباتات الزينة الداخلية والخارجية. تصفّح الصور والأسماء والتفاصيل، وابحث بلغتك المفضلة.</p>
+ <div class="searchrow"><input id="search" placeholder="ابحث باسم النبات بالعربي أو الإنجليزي أو الإيطالي أو الروسي أو الاسم العلمي..."><button onclick="render()">ابحث الآن 🔎</button></div>
+</section>
+<main class="wrap">
+ <section id="catalog">
+  <div class="section-title"><div><h2>اكتشف نباتات الزينة</h2><div class="muted" id="count"></div></div><select id="sort" onchange="render()"><option value="az">ترتيب أبجدي</option><option value="price">السعر من الأقل للأعلى</option><option value="stock">المتاح أولاً</option></select></div>
+  <div class="filters" id="filters"></div>
+  <div class="grid" id="plants"></div>
+ </section>
+ <section class="contact-panel" id="contact">
+  <h2>📞 تواصل مع المشتل</h2>
+  <p>للاستفسار عن الأسعار الحالية والكميات المتاحة وطلب نباتات الزينة:</p>
+  <a class="btn" href="https://wa.me/201272222886" target="_blank" rel="noopener">واتساب المشتل — 01272222886</a>
+ </section>
+ <section class="store" id="store">
+  <div class="section-title"><div><h2>🛒 متجر المشتل</h2><div class="muted">الأسعار والكميات تُحدّث من لوحة إدارة المشتل</div></div></div>
+  <div class="notice">تنبيه: لم يتم إدخال أسعار أو كميات عشوائية. الأسعار تختلف حسب حجم الأصيص والعمر والصنف والموسم. أدخل سعر البيع والمخزون الفعلي من لوحة الإدارة قبل استقبال الطلبات.</div>
+  <p>المتجر يعرض أسعار البيع والكميات التي يسجلها المشتل. لتأكيد الطلب، استخدم قسم التواصل المستقل أعلى/أسفل الصفحة.</p>
+  <a class="btn" href="#contact">الانتقال إلى التواصل</a>
+ </section>
+ <section class="admin" id="admin">
+  <h2 style="color:var(--green);margin-top:0">⚙️ إدارة الأسعار والمخزون</h2>
+  <p class="muted">اختار نباتًا، ثم حدّث سعره والكمية الموجودة. البيانات تُحفظ على نفس المتصفح فقط؛ النشر العام وإدارة عدة أجهزة يحتاجان قاعدة بيانات وخادمًا.</p>
+  <div class="admin-grid">
+   <label>النبات<select id="adminPlant"></select></label>
+   <label>السعر بالجنيه المصري<input id="adminPrice" type="number" min="0" placeholder="مثال: 150"></label>
+   <label>الكمية المتاحة<input id="adminStock" type="number" min="0" placeholder="مثال: 12"></label>
+   <label>حجم الأصيص / ملاحظات<input id="adminSize" placeholder="مثال: أصيص 20 سم"></label>
+  </div>
+  <p><button onclick="saveProduct()">حفظ بيانات المنتج</button></p>
+  <div id="saved" class="muted"></div>
+ </section>
+</main>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="modalbox">
+ <div class="modalhead"><strong id="modalTitle">تفاصيل النبات</strong><button class="light" onclick="closeModal()">إغلاق ✕</button></div>
+ <div class="modalbody" id="modalBody"></div>
+</div></div>
+<footer id="contact">🌱 المزارع الصغير | AL MOZARE3 EL SAGHEER<br>Developed by <b>Samy Eid | سامي عيد</b><br>موسوعة نباتات الزينة | 390 نوعًا وصنفًا</footer>
+<script>
+const plants = [{"name":"البوتس الذهبي","latin":"Epipremnum aureum","category":"1. نباتات الظل والزينة الداخلية"},{"name":"البوتس الملكي - ماربل كوين","latin":"Marble Queen Pothos","category":"1. نباتات الظل والزينة الداخلية"},{"name":"البوتس النيون","latin":"Neon Pothos","category":"1. نباتات الظل والزينة الداخلية"},{"name":"البوتس ساتين","latin":"Scindapsus pictus","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الفيلودندرون قلب الورقة","latin":"Philodendron hederaceum","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الفيلودندرون البرازيلي","latin":"Philodendron Brasil","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الفيلودندرون الأميرة الوردية","latin":"Pink Princess Philodendron","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الفيلودندرون زانادو","latin":"Philodendron xanadu","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الفيلودندرون بيركين","latin":"Philodendron Birkin","category":"1. نباتات الظل والزينة الداخلية"},{"name":"القفص الصدري - مونستيرا ديليسيوسا","latin":"Monstera deliciosa","category":"1. نباتات الظل والزينة الداخلية"},{"name":"مونستيرا أدانسوني - الجبنة السويسرية","latin":"Monstera adansonii","category":"1. نباتات الظل والزينة الداخلية"},{"name":"مونستيرا ألبو المبرقشة","latin":"Monstera Albo","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الدفنباخيا - عصا الأخرس","latin":"Dieffenbachia","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الأجلونيما الخضراء - دائم الخضرة الصيني","latin":"Aglaonema","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الأجلونيما الحمراء - فالنتين","latin":"Aglaonema Red Valentine","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الكالاثيا المخططة - نبات الصلاة","latin":"Calathea ornata","category":"1. نباتات الظل والزينة الداخلية"},{"name":"كالاثيا ميداليون","latin":"Calathea medallion","category":"1. نباتات الظل والزينة الداخلية"},{"name":"كالاثيا أفعى الجرس","latin":"Calathea lancifolia","category":"1. نباتات الظل والزينة الداخلية"},{"name":"المارانتا الحمراء","latin":"Maranta leuconeura","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الستروماثي ثلاثية الألوان","latin":"Stromanthe triostar","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الشفليرا الخضراء - مظلة القزم","latin":"Schefflera arboricola","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الشفليرا المبرقشة","latin":"Schefflera variegata","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الفيكس بنجامينا","latin":"Ficus benjamina","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الفيكس ليراتا - تين الكمان","latin":"Ficus lyrata","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الفيكس إيلاستيكا - شجرة المطاط","latin":"Ficus elastica","category":"1. نباتات الظل والزينة الداخلية"},{"name":"فيكس روبي المبرقش","latin":"Ficus elastica Ruby","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الدراسينا مارجيناتا - التنين","latin":"Dracaena marginata","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الدراسينا ماسنجيانا - شجرة الذرة","latin":"Dracaena fragrans","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الدراسينا كومباكتا","latin":"Dracaena compacta","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الدراسينا ساندرينا - لاكي بامبو","latin":"Lucky Bamboo","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الكورديلاين الأحمر","latin":"Cordyline fruticosa","category":"1. نباتات الظل والزينة الداخلية"},{"name":"اليوكا الداخلية","latin":"Yucca elephantipes","category":"1. نباتات الظل والزينة الداخلية"},{"name":"جلد النمر - سانسيفيريا","latin":"Sansevieria trifasciata","category":"1. نباتات الظل والزينة الداخلية"},{"name":"سانسيفيريا أسطوانية","latin":"Sansevieria cylindrica","category":"1. نباتات الظل والزينة الداخلية"},{"name":"سانسيفيريا عش الطائر","latin":"Sansevieria hahnii","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الزاميا - نبات ZZ","latin":"Zamioculcas zamiifolia","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الزاميا السوداء - رافين","latin":"ZZ Raven","category":"1. نباتات الظل والزينة الداخلية"},{"name":"نبات العنكبوت - كلوروفيتم","latin":"Chlorophytum comosum","category":"1. نباتات الظل والزينة الداخلية"},{"name":"زهرة السلام - سباثيفيلم","latin":"Spathiphyllum","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الأنثوريوم الأحمر - زهرة الفلامنجو","latin":"Anthurium andraeanum","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الأنثوريوم الوردي والأبيض","latin":"","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الكروتون الملون","latin":"Codiaeum variegatum","category":"1. نباتات الظل والزينة الداخلية"},{"name":"البيبروميا البطيخية","latin":"Peperomia argyreia","category":"1. نباتات الظل والزينة الداخلية"},{"name":"البيبروميا الخضراء","latin":"Peperomia obtusifolia","category":"1. نباتات الظل والزينة الداخلية"},{"name":"نبات البولكا دوت","latin":"Hypoestes phyllostachya","category":"1. نباتات الظل والزينة الداخلية"},{"name":"نبات الفيتونيا - عصب الورقة","latin":"Fittonia albivenis","category":"1. نباتات الظل والزينة الداخلية"},{"name":"نبات البيلية - عملة الصين","latin":"Pilea peperomioides","category":"1. نباتات الظل والزينة الداخلية"},{"name":"البيلية الألومنيوم","latin":"Pilea cadierei","category":"1. نباتات الظل والزينة الداخلية"},{"name":"التراديسكانتيا البنفسجية - المكحلة","latin":"Tradescantia zebrina","category":"1. نباتات الظل والزينة الداخلية"},{"name":"تراديسكانتيا نانوك الوردية","latin":"Tradescantia Nanouk","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الهويا - زهرة الشمع","latin":"Hoya carnosa","category":"1. نباتات الظل والزينة الداخلية"},{"name":"هويا كيري - ورقة القلب","latin":"Hoya kerrii","category":"1. نباتات الظل والزينة الداخلية"},{"name":"السيروبيجيا - سلسلة القلوب","latin":"Ceropegia woodii","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الألوكاسيا أمازونيكا - أذن الفيل","latin":"Alocasia amazonica","category":"1. نباتات الظل والزينة الداخلية"},{"name":"ألوكاسيا التنين الفضي","latin":"Alocasia Silver Dragon","category":"1. نباتات الظل والزينة الداخلية"},{"name":"ألوكاسيا زبرينا","latin":"Alocasia zebrina","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الكولوكاسيا السوداء","latin":"Colocasia Black Magic","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الكالاديوم الملون - أجنحة الملاك","latin":"Caladium","category":"1. نباتات الظل والزينة الداخلية"},{"name":"الأسپيديسترا - نبات الحديد الزهر","latin":"Aspidistra elatior","category":"1. نباتات الظل والزينة الداخلية"},{"name":"سباراغوس ناعم - ذيل الثعلب","latin":"Asparagus densiflorus","category":"1. نباتات الظل والزينة الداخلية"},{"name":"السرخس البوسطني","latin":"Nephrolepis exaltata","category":"2. السرخسيات ونباتات الرطوبة"},{"name":"سرخس عش الطائر","latin":"Asplenium nidus","category":"2. السرخسيات ونباتات الرطوبة"},{"name":"سرخس كزبرة البئر","latin":"Adiantum","category":"2. السرخسيات ونباتات الرطوبة"},{"name":"سرخس قرن الأيل","latin":"Platycerium","category":"2. السرخسيات ونباتات الرطوبة"},{"name":"سرخس الزر الليموني","latin":"Nephrolepis cordifolia","category":"2. السرخسيات ونباتات الرطوبة"},{"name":"سرخس قدم الأرنب","latin":"Davallia fejeensis","category":"2. السرخسيات ونباتات الرطوبة"},{"name":"السرخس الأزرق النجمي","latin":"Phlebodium aureum","category":"2. السرخسيات ونباتات الرطوبة"},{"name":"السلاجينيلا - الطحلب الشائك","latin":"Selaginella","category":"2. السرخسيات ونباتات الرطوبة"},{"name":"الألوفيرا - الصبار الطبي","latin":"Aloe vera","category":"3. الصباريات والعصاريات"},{"name":"صبار جلد التمساح","latin":"Aloe aristata","category":"3. الصباريات والعصاريات"},{"name":"صبار النمر","latin":"Aloe variegata","category":"3. الصباريات والعصاريات"},{"name":"الهاورثيا المخططة - صبار الحمار الوحشي","latin":"Haworthia fasciata","category":"3. الصباريات والعصاريات"},{"name":"هاورثيا كوبرى الشفافة","latin":"Haworthia cooperi","category":"3. الصباريات والعصاريات"},{"name":"الجاستيريا - لسان الثور","latin":"Gasteria","category":"3. الصباريات والعصاريات"},{"name":"نبات اليشم - شجرة المال","latin":"Crassula ovata","category":"3. الصباريات والعصاريات"},{"name":"كراسولا معبد بوذا","latin":"Crassula Buddha's Temple","category":"3. الصباريات والعصاريات"},{"name":"الإيشيفيريا - وردة الصحراء العصارية","latin":"Echeveria elegans","category":"3. الصباريات والعصاريات"},{"name":"إيشيفيريا الأمير الأسود","latin":"Echeveria Black Prince","category":"3. الصباريات والعصاريات"},{"name":"الإيونيوم الأسود - شوارزكوبف","latin":"Aeonium arboreum","category":"3. الصباريات والعصاريات"},{"name":"السيمبرفيفوم - حي العالم العنكبوتي","latin":"Sempervivum","category":"3. الصباريات والعصاريات"},{"name":"السيدوم ذيل الحمار","latin":"Sedum morganianum","category":"3. الصباريات والعصاريات"},{"name":"السيدوم الذهبي","latin":"Sedum adolphi","category":"3. الصباريات والعصاريات"},{"name":"سلسلة اللؤلؤ","latin":"Senecio rowleyanus","category":"3. الصباريات والعصاريات"},{"name":"سلسلة الموز","latin":"Senecio radicans","category":"3. الصباريات والعصاريات"},{"name":"سلسلة الدلافين","latin":"Senecio peregrinus","category":"3. الصباريات والعصاريات"},{"name":"الكلانشو المزهر","latin":"Kalanchoe blossfeldiana","category":"3. الصباريات والعصاريات"},{"name":"كلانشو أذن الفيل","latin":"Kalanchoe beharensis","category":"3. الصباريات والعصاريات"},{"name":"كلانشو أم الملايين","latin":"Kalanchoe daigremontiana","category":"3. الصباريات والعصاريات"},{"name":"كلانشو الباندا","latin":"Kalanchoe tomentosa","category":"3. الصباريات والعصاريات"},{"name":"الليثوبس - الحجارة الحية","latin":"Lithops","category":"3. الصباريات والعصاريات"},{"name":"الأدينيوم - وردة الصحراء الحقيقية","latin":"Adenium obesum","category":"3. الصباريات والعصاريات"},{"name":"الباكيبوديوم - نخلة مدغشقر","latin":"Pachypodium lamerei","category":"3. الصباريات والعصاريات"},{"name":"الإيفوربيا تريجونا - شجرة الحليب الأفريقية","latin":"Euphorbia trigona","category":"3. الصباريات والعصاريات"},{"name":"شوكة المسيح","latin":"Euphorbia milii","category":"3. الصباريات والعصاريات"},{"name":"صبار الأرنب","latin":"Opuntia microdasys","category":"3. الصباريات والعصاريات"},{"name":"التين الشوكي الزينة","latin":"Opuntia ficus-indica","category":"3. الصباريات والعصاريات"},{"name":"صبار الكرة الذهبية - كرسي الحماة","latin":"Echinocactus grusonii","category":"3. الصباريات والعصاريات"},{"name":"صبار الماميلاريا - وسادة الدبابيس","latin":"Mammillaria","category":"3. الصباريات والعصاريات"},{"name":"صبار الجيمنوكاليسيوم - صبار القمر الملون","latin":"Gymnocalycium mihanovichii","category":"3. الصباريات والعصاريات"},{"name":"صبار الأستروفيتوم - نجمة الأسقف","latin":"Astrophytum","category":"3. الصباريات والعصاريات"},{"name":"صبار الفيروكاكتوس - البرميل","latin":"Ferocactus","category":"3. الصباريات والعصاريات"},{"name":"صبار السيريوس - العمودي العملاق","latin":"Cereus","category":"3. الصباريات والعصاريات"},{"name":"صبار عيد الميلاد","latin":"Schlumbergera","category":"3. الصباريات والعصاريات"},{"name":"صبار ذيل القرد","latin":"Cleistocactus colademononis","category":"3. الصباريات والعصاريات"},{"name":"الأغاف الأمريكي الأزرق","latin":"Agave americana","category":"3. الصباريات والعصاريات"},{"name":"الأغاف المخطط","latin":"Agave americana marginata","category":"3. الصباريات والعصاريات"},{"name":"أغاف الملكة فيكتوريا","latin":"Agave victoriae-reginae","category":"3. الصباريات والعصاريات"},{"name":"أغاف ذيل الثعلب","latin":"Agave attenuata","category":"3. الصباريات والعصاريات"},{"name":"نخيل الأريكا","latin":"Dypsis lutescens","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الكينتيا","latin":"Howea forsteriana","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الشاميدوريا - نخيل الصالون","latin":"Chamaedorea elegans","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل السيكاس - ذيل الجمل","latin":"Cycas revoluta","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الزاميا الكرتونية","latin":"Zamia furfuracea","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الرافيدوفيلوم - نخيل السيدة","latin":"Rhapis excelsa","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل المروحة الصينية","latin":"Livistona chinensis","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الواشنطونيا الخيطي","latin":"Washingtonia filifera","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الواشنطونيا القوي","latin":"Washingtonia robusta","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الملوك","latin":"Roystonea regia","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الفوكس تيل - ذيل الثعلب","latin":"Wodyetia bifurcata","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل البسماركيا الفضي","latin":"Bismarckia nobilis","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الكناري","latin":"Phoenix canariensis","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الرئبليني القزم","latin":"Phoenix roebelenii","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الذيل السمكي","latin":"Caryota mitis","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل مثلث مدغشقر","latin":"Dypsis decaryi","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل البوتيا - نخيل الجيلي","latin":"Butia capitata","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"نخيل الشمعدان","latin":"Pandanus utilis","category":"4. نخيل الزينة الداخلي والخارجي"},{"name":"البيتونيا المفردة والمجوزة","latin":"Petunia","category":"5. الأزهار الحولية والموسمية"},{"name":"القطيفة - الماريجولد الأفريقي والفرنسي","latin":"Tagetes","category":"5. الأزهار الحولية والموسمية"},{"name":"الجيرانيوم - الخبيزة الإفرنجية","latin":"Pelargonium","category":"5. الأزهار الحولية والموسمية"},{"name":"البيجونيا الشمعية","latin":"Begonia semperflorens","category":"5. الأزهار الحولية والموسمية"},{"name":"البيجونيا الدرنية","latin":"Begonia tuberhybrida","category":"5. الأزهار الحولية والموسمية"},{"name":"بيجونيا ريكس المزخرفة","latin":"Begonia rex","category":"5. الأزهار الحولية والموسمية"},{"name":"الفينكا - الونكا المزهرة","latin":"Catharanthus roseus","category":"5. الأزهار الحولية والموسمية"},{"name":"الزينيا","latin":"Zinnia elegans","category":"5. الأزهار الحولية والموسمية"},{"name":"دوار الشمس القزم","latin":"Helianthus annuus","category":"5. الأزهار الحولية والموسمية"},{"name":"فم السمكة - الأنتيرينم","latin":"Antirrhinum majus","category":"5. الأزهار الحولية والموسمية"},{"name":"البانسيه - زهرة الثالوث","latin":"Viola tricolor","category":"5. الأزهار الحولية والموسمية"},{"name":"الفيولا القزمية","latin":"Viola cornuta","category":"5. الأزهار الحولية والموسمية"},{"name":"السالفيا الحمراء والزرقاء","latin":"Salvia splendens","category":"5. الأزهار الحولية والموسمية"},{"name":"الفربينا","latin":"Verbena","category":"5. الأزهار الحولية والموسمية"},{"name":"الأليسم - عسلية","latin":"Lobularia maritima","category":"5. الأزهار الحولية والموسمية"},{"name":"اللوبيليا الزرقاء","latin":"Lobelia erinus","category":"5. الأزهار الحولية والموسمية"},{"name":"الإمبيشنز - البلسم","latin":"Impatiens walleriana","category":"5. الأزهار الحولية والموسمية"},{"name":"إمبيشنز غينيا الجديدة","latin":"New Guinea Impatiens","category":"5. الأزهار الحولية والموسمية"},{"name":"الكوليوس - السجادة الملونة","latin":"Coleus","category":"5. الأزهار الحولية والموسمية"},{"name":"الجازانيا","latin":"Gazania rigens","category":"5. الأزهار الحولية والموسمية"},{"name":"صباح الخير - رجلة الزهور","latin":"Portulaca grandiflora","category":"5. الأزهار الحولية والموسمية"},{"name":"الأستير الصيني","latin":"Callistephus chinensis","category":"5. الأزهار الحولية والموسمية"},{"name":"الكوزموس","latin":"Cosmos bipinnatus","category":"5. الأزهار الحولية والموسمية"},{"name":"الأقحوان - الكريزانثيمم","latin":"Chrysanthemum","category":"5. الأزهار الحولية والموسمية"},{"name":"الجربيرا","latin":"Gerbera jamesonii","category":"5. الأزهار الحولية والموسمية"},{"name":"القرنفل الصيني والبلدي","latin":"Dianthus","category":"5. الأزهار الحولية والموسمية"},{"name":"الجبسوفيلا - نفس الطفل","latin":"Gypsophila","category":"5. الأزهار الحولية والموسمية"},{"name":"الدلفينيوم - عايق","latin":"Delphinium","category":"5. الأزهار الحولية والموسمية"},{"name":"الترمس المزهر","latin":"Lupinus","category":"5. الأزهار الحولية والموسمية"},{"name":"الخطمية الزينة","latin":"Alcea rosea","category":"5. الأزهار الحولية والموسمية"},{"name":"عرف الديك","latin":"Celosia argentea","category":"5. الأزهار الحولية والموسمية"},{"name":"القطيفة الذهبية - الكاليندولا","latin":"Calendula officinalis","category":"5. الأزهار الحولية والموسمية"},{"name":"أبو خنجر","latin":"Tropaeolum majus","category":"5. الأزهار الحولية والموسمية"},{"name":"الستاتس - زهرة القش","latin":"Limonium sinuatum","category":"5. الأزهار الحولية والموسمية"},{"name":"زهرة الذرة الزرقاء","latin":"Centaurea cyanus","category":"5. الأزهار الحولية والموسمية"},{"name":"شقائق النعمان","latin":"Anemone coronaria","category":"5. الأزهار الحولية والموسمية"},{"name":"الخشخاش الزينة","latin":"Papaver","category":"5. الأزهار الحولية والموسمية"},{"name":"البريمولا - زهرة الربيع","latin":"Primula","category":"5. الأزهار الحولية والموسمية"},{"name":"السينيراريا","latin":"Pericallis × hybrida","category":"5. الأزهار الحولية والموسمية"},{"name":"الكالسولاريا - خف السيدة","latin":"Calceolaria","category":"5. الأزهار الحولية والموسمية"},{"name":"السيكلامن - بخور مريم","latin":"Cyclamen persicum","category":"5. الأزهار الحولية والموسمية"},{"name":"بنت القنصل - البوينسيتيا","latin":"Euphorbia pulcherrima","category":"5. الأزهار الحولية والموسمية"},{"name":"التوليب الهولندي","latin":"Tulipa","category":"6. الأبصال المزهرة"},{"name":"النرجس البري والأصفر","latin":"Narcissus","category":"6. الأبصال المزهرة"},{"name":"النرجس البلدي الأبيض","latin":"","category":"6. الأبصال المزهرة"},{"name":"الليليوم الأسيوي والشرقي","latin":"Lilium","category":"6. الأبصال المزهرة"},{"name":"الجلاديولس","latin":"Gladiolus","category":"6. الأبصال المزهرة"},{"name":"الفريزيا العطرية","latin":"Freesia","category":"6. الأبصال المزهرة"},{"name":"الهايسنت - الخزامى البصلي","latin":"Hyacinthus","category":"6. الأبصال المزهرة"},{"name":"الكروكس - الزعفران الربيعي","latin":"Crocus","category":"6. الأبصال المزهرة"},{"name":"السوسن - الأيريس","latin":"Iris","category":"6. الأبصال المزهرة"},{"name":"الداليا العملاقة والقزمية","latin":"Dahlia","category":"6. الأبصال المزهرة"},{"name":"الكنا الهندية","latin":"Canna indica","category":"6. الأبصال المزهرة"},{"name":"مسك الروم - التوبيروز","latin":"Polianthes tuberosa","category":"6. الأبصال المزهرة"},{"name":"الأمريليس - زنبق الجرس","latin":"Hippeastrum","category":"6. الأبصال المزهرة"},{"name":"الكلييفيا - زنبق بوش","latin":"Clivia miniata","category":"6. الأبصال المزهرة"},{"name":"الأجابنثس - زنبق النيل الأزرق","latin":"Agapanthus","category":"6. الأبصال المزهرة"},{"name":"الكالا ليلي - زنبق الكالا","latin":"Zantedeschia","category":"6. الأبصال المزهرة"},{"name":"الزنبق العنكبوتي الأحمر","latin":"Lycoris radiata","category":"6. الأبصال المزهرة"},{"name":"الراننكولس - الحوذان الآسيوي","latin":"Ranunculus asiaticus","category":"6. الأبصال المزهرة"},{"name":"الأوكزاليس البنفسجي - النفل الأرجواني","latin":"Oxalis triangularis","category":"6. الأبصال المزهرة"},{"name":"الأورنيثوجالم - نجمة بيت لحم","latin":"Ornithogalum","category":"6. الأبصال المزهرة"},{"name":"أوركيد فالاينوبسيس - الفراشة","latin":"Phalaenopsis","category":"7. الأوركيد والنباتات الهوائية"},{"name":"أوركيد كاتليا","latin":"Cattleya","category":"7. الأوركيد والنباتات الهوائية"},{"name":"أوركيد دندروبيوم","latin":"Dendrobium","category":"7. الأوركيد والنباتات الهوائية"},{"name":"أوركيد أونسيديوم - السيدة الراقصة","latin":"Oncidium","category":"7. الأوركيد والنباتات الهوائية"},{"name":"أوركيد سيمبيديوم","latin":"Cymbidium","category":"7. الأوركيد والنباتات الهوائية"},{"name":"أوركيد فاندا الهوائي","latin":"Vanda","category":"7. الأوركيد والنباتات الهوائية"},{"name":"أوركيد بابيوبيديلوم - خف فينوس","latin":"Paphiopedilum","category":"7. الأوركيد والنباتات الهوائية"},{"name":"التيلاندسيا - النباتات الهوائية","latin":"Tillandsia","category":"7. الأوركيد والنباتات الهوائية"},{"name":"الطحلب الإسباني","latin":"Tillandsia usneoides","category":"7. الأوركيد والنباتات الهوائية"},{"name":"البروميليا - جوزمانيا","latin":"Guzmania","category":"7. الأوركيد والنباتات الهوائية"},{"name":"بروميليا إيكميا - المزهرية الفضية","latin":"Aechmea fasciata","category":"7. الأوركيد والنباتات الهوائية"},{"name":"بروميليا فريسيا","latin":"Vriesea","category":"7. الأوركيد والنباتات الهوائية"},{"name":"الورد البلدي الأحمر والوردي","latin":"Rosa damascena","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الورد الهولندي","latin":"Hybrid Tea Rose","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الورد القزمي","latin":"Miniature Rose","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الفل المجوز والمفرد","latin":"Jasminum sambac","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الجاردينيا","latin":"Gardenia jasminoides","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الكاميليا اليابانية","latin":"Camellia japonica","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الأزاليا","latin":"Rhododendron simsii","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الهيدرانجيا - الأرطاسيا","latin":"Hydrangea macrophylla","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الهبيسكس - كركديه الزينة","latin":"Hibiscus rosa-sinensis","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الهبيسكس المتهدل","latin":"Hibiscus schizopetalus","category":"8. الشجيرات المزهرة والعطرية"},{"name":"اللانتانا كمارا - أم كلثوم","latin":"Lantana camara","category":"8. الشجيرات المزهرة والعطرية"},{"name":"اللانتانا البنفسجية الزاحفة","latin":"Lantana montevidensis","category":"8. الشجيرات المزهرة والعطرية"},{"name":"التكوما الصفراء","latin":"Tecoma stans","category":"8. الشجيرات المزهرة والعطرية"},{"name":"التكوما البرتقالية","latin":"Tecomaria capensis","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الدفلة الوردية والبيضاء","latin":"Nerium oleander","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الدوراندا - مينا الشجر","latin":"Duranta erecta","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الدوراندا الذهبية","latin":"Duranta Golden Edge","category":"8. الشجيرات المزهرة والعطرية"},{"name":"المورايا العطرية","latin":"Murraya paniculata","category":"8. الشجيرات المزهرة والعطرية"},{"name":"البتسبورم الياباني","latin":"Pittosporum tobira","category":"8. الشجيرات المزهرة والعطرية"},{"name":"البتسبورم المبرقش","latin":"","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الإكزورا الحمراء","latin":"Ixora coccinea","category":"8. الشجيرات المزهرة والعطرية"},{"name":"البلومباجو - الياسمين الأزرق","latin":"Plumbago auriculata","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الروسليا - نبات المرجان","latin":"Russelia equisetiformis","category":"8. الشجيرات المزهرة والعطرية"},{"name":"السيستروم - ملكة الليل","latin":"Cestrum nocturnum","category":"8. الشجيرات المزهرة والعطرية"},{"name":"ملكة النهار","latin":"Cestrum diurnum","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الأكاليفا الحمراء","latin":"Acalypha wilkesiana","category":"8. الشجيرات المزهرة والعطرية"},{"name":"أكاليفا ذيل القط","latin":"Acalypha hispida","category":"8. الشجيرات المزهرة والعطرية"},{"name":"البودليا - شجيرة الفراشات","latin":"Buddleja davidii","category":"8. الشجيرات المزهرة والعطرية"},{"name":"اللافندر الإنجليزي والفرنسي","latin":"Lavandula","category":"8. الشجيرات المزهرة والعطرية"},{"name":"الروزماري القائم والزاحف","latin":"Salvia rosmarinus","category":"8. الشجيرات المزهرة والعطرية"},{"name":"السانتولينا الفضية","latin":"Santolina chamaecyparissus","category":"8. الشجيرات المزهرة والعطرية"},{"name":"البربريس الأحمر","latin":"Berberis thunbergii","category":"8. الشجيرات المزهرة والعطرية"}]
+</script>
+<script>
+let currentLang = 'ar';
+const translations = {
+ ar: { languageLabel: "اللغة", home: "الرئيسية", catalog: "النباتات", store: "المتجر", contact: "تواصل معنا", heroTitle: "خلّي الطبيعة أقرب ليك 🌱", heroDesc: "موسوعة متخصصة تضم 390 نوعًا وصنفًا من نباتات الزينة الداخلية والخارجية. تصفّح الصور والأسماء والتفاصيل، وابحث بلغتك المفضلة.", searchPlaceholder: "ابحث باسم النبات بالعربي أو الإنجليزي أو الإيطالي أو الروسي أو الاسم العلمي...", searchBtn: "ابحث الآن 🔎", catalogTitle: "اكتشف نباتات الزينة", sortAz: "ترتيب أبجدي", sortPrice: "السعر من الأقل للأعلى", sortStock: "المتاح أولاً", contactTitle: "📞 تواصل مع المشتل", contactDesc: "للاستفسار عن الأسعار الحالية والكميات المتاحة وطلب نباتات الزينة:", waBtn: "واتساب المشتل — 01272222886", storeTitle: "🛒 متجر المشتل", storeSub: "الأسعار والكميات تُحدّث من لوحة إدارة المشتل", storeNotice: "تنبيه: لم يتم إدخال أسعار أو كميات عشوائية. الأسعار تختلف حسب حجم الأصيص والعمر والصنف والموسم. أدخل سعر البيع والمخزون الفعلي من لوحة الإدارة قبل استقبال الطلبات.", storeText: "المتجر يعرض أسعار البيع والكميات التي يسجلها المشتل. لتأكيد الطلب، استخدم قسم التواصل المستقل أعلى/أسفل الصفحة.", storeBtn: "الانتقال إلى التواصل", adminTitle: "⚙️ إدارة الأسعار والمخزون", adminDesc: "اختار نباتًا، ثم حدّث سعره والكمية الموجودة. البيانات تُحفظ على نفس المتصفح فقط؛ النشر العام وإدارة عدة أجهزة يحتاجان قاعدة بيانات وخادمًا.", adminPlant: "النبات", adminPrice: "السعر بالجنيه المصري", adminStock: "الكمية المتاحة", adminSize: "حجم الأصيص / ملاحظات", adminSave: "حفظ بيانات المنتج", detailsBtn: "التفاصيل", priceLabel: "السعر:", stockLabel: "المتاح:", sizeLabel: "الحجم:", categoryLabel: "التصنيف:", closeBtn: "إغلاق ✕", modalTitleDefault: "تفاصيل النبات" },
+ en: { languageLabel: "Language", home: "Home", catalog: "Plants", store: "Store", contact: "Contact", heroTitle: "Bring Nature Closer 🌱", heroDesc: "A specialized encyclopedia featuring 390 ornamental plant varieties. Browse images, names, and details in your preferred language.", searchPlaceholder: "Search by plant name (Arabic, English, Italian, Russian, Scientific)...", searchBtn: "Search 🔎", catalogTitle: "Discover Ornamental Plants", sortAz: "Alphabetical", sortPrice: "Price: Low to High", sortStock: "Available First", contactTitle: "📞 Contact Nursery", contactDesc: "For current prices, available quantities, and plant orders:", waBtn: "Nursery WhatsApp — 01272222886", storeTitle: "🛒 Nursery Store", storeSub: "Prices and quantities are updated from the management panel", storeNotice: "Notice: No random prices or quantities are set. Prices vary by pot size, age, variety, and season.", storeText: "The store displays prices and quantities recorded by the nursery. To confirm orders, use the contact section above/below.", storeBtn: "Go to Contact", adminTitle: "⚙️ Price & Stock Management", adminDesc: "Select a plant, then update its price and stock. Data is saved locally in your browser.", adminPlant: "Plant", adminPrice: "Price (EGP)", adminStock: "Available Quantity", adminSize: "Pot Size / Notes", adminSave: "Save Product Data", detailsBtn: "Details", priceLabel: "Price:", stockLabel: "Available:", sizeLabel: "Size:", categoryLabel: "Category:", closeBtn: "Close ✕", modalTitleDefault: "Plant Details" },
+ it: { languageLabel: "Lingua", home: "Home", catalog: "Piante", store: "Negozio", contact: "Contatti", heroTitle: "Avvicina la Natura 🌱", heroDesc: "Un'enciclopedia specializzata con 390 varietà di piante ornamentali. Sfoglia immagini, nomi e dettagli.", searchPlaceholder: "Cerca per nome della pianta...", searchBtn: "Cerca 🔎", catalogTitle: "Scopri le Piante Ornamentali", sortAz: "Alfabetico", sortPrice: "Prezzo: dal più basso", sortStock: "Disponibili prima", contactTitle: "📞 Contatta il Vivaio", contactDesc: "Per prezzi correnti, quantità e ordini di piante:", waBtn: "WhatsApp Vivaio — 01272222886", storeTitle: "🛒 Negozio del Vivaio", storeSub: "Prezzi e quantità aggiornati dal pannello di gestione", storeNotice: "Avviso: i prezzi variano in base a dimensioni e stagione.", storeText: "Il negozio mostra i prezzi registrati dal vivaio.", storeBtn: "Vai ai Contatti", adminTitle: "⚙️ Gestione Prezzi e Stock", adminDesc: "Seleziona una pianta e aggiorna prezzo e stock.", adminPlant: "Pianta", adminPrice: "Prezzo (EGP)", adminStock: "Quantità", adminSize: "Dimensione vaso", adminSave: "Salva", detailsBtn: "Dettagli", priceLabel: "Prezzo:", stockLabel: "Disponibile:", sizeLabel: "Dimensione:", categoryLabel: "Categoria:", closeBtn: "Chiudi ✕", modalTitleDefault: "Dettagli Pianta" },
+ ru: { languageLabel: "Язык", home: "Главная", catalog: "Растения", store: "Магазин", contact: "Контакты", heroTitle: "Ближе к природе 🌱", heroDesc: "Специализированная энциклопедия, включающая 390 видов декоративных растений.", searchPlaceholder: "Поиск по названию растения...", searchBtn: "Поиск 🔎", catalogTitle: "Декоративные растения", sortAz: "По алфавиту", sortPrice: "Цена: по возрастанию", sortStock: "Сначала в наличии", contactTitle: "📞 Контакты питомника", contactDesc: "Уточняйте актуальные цены и наличие:", waBtn: "WhatsApp питомника — 01272222886", storeTitle: "🛒 Магазин", storeSub: "Цены и остатки обновляются в панели управления", storeNotice: "Внимание: цены зависят от размера горшка и сезона.", storeText: "Магазин отображает данные питомника.", storeBtn: "Перейти к контактам", adminTitle: "⚙️ Управление ценами и запасами", adminDesc: "Выберите растение и обновите его цену и запас.", adminPlant: "Растение", adminPrice: "Цена (EGP)", adminStock: "Количество", adminSize: "Размер горшка", adminSave: "Сохранить", detailsBtn: "Детали", priceLabel: "Цена:", stockLabel: "В наличии:", sizeLabel: "Размер:", categoryLabel: "Категория:", closeBtn: "Закрыть ✕", modalTitleDefault: "Детали растения" }
+};
+function getCategories() { return [...new Set(plants.map(p => p.category))]; }
+function initData() {
+ let saved = localStorage.getItem('greenora_inventory');
+ window.inventory = saved ? JSON.parse(saved) : {};
+}
+function saveInventory() {
+ localStorage.setItem('greenora_inventory', JSON.stringify(window.inventory));
+}
+function updateTexts() {
+ let t = translations[currentLang];
+ document.getElementById('languageLabel').innerText = t.languageLabel;
+ document.querySelector('header nav a:nth-child(1)').innerText = t.home;
+ document.querySelector('header nav a:nth-child(2)').innerText = t.catalog;
+ document.querySelector('header nav a:nth-child(3)').innerText = t.store;
+ document.querySelector('header nav a:nth-child(4)').innerText = t.contact;
+ document.querySelector('.hero h1').innerText = t.heroTitle;
+ document.querySelector('.hero p').innerText = t.heroDesc;
+ document.getElementById('search').placeholder = t.searchPlaceholder;
+ document.querySelector('.searchrow button').innerText = t.searchBtn;
+ document.querySelector('#catalog h2').innerText = t.catalogTitle;
+ let sortSelect = document.getElementById('sort');
+ sortSelect.options[0].text = t.sortAz;
+ sortSelect.options[1].text = t.sortPrice;
+ sortSelect.options[2].text = t.sortStock;
+ document.querySelector('#contact h2').innerText = t.contactTitle;
+ document.querySelector('#contact p').innerText = t.contactDesc;
+ document.querySelector('#contact .btn').innerText = t.waBtn;
+ document.querySelector('#store h2').innerText = t.storeTitle;
+ document.querySelector('#store .muted').innerText = t.storeSub;
+ document.querySelector('.notice').innerText = t.storeNotice;
+ document.querySelector('#store p').innerText = t.storeText;
+ document.querySelector('#store .btn').innerText = t.storeBtn;
+ document.querySelector('.admin h2').innerText = t.adminTitle;
+ document.querySelector('.admin .muted').innerText = t.adminDesc;
+ document.querySelectorAll('.admin-grid label')[0].childNodes[0].nodeValue = t.adminPlant + " ";
+ document.querySelectorAll('.admin-grid label')[1].childNodes[0].nodeValue = t.adminPrice + " ";
+ document.querySelectorAll('.admin-grid label')[2].childNodes[0].nodeValue = t.adminStock + " ";
+ document.querySelectorAll('.admin-grid label')[3].childNodes[0].nodeValue = t.adminSize + " ";
+ document.querySelector('.admin button').innerText = t.adminSave;
+ document.querySelector('#modalhead strong').innerText = t.modalTitleDefault;
+ document.querySelector('#modalhead button').innerText = t.closeBtn;
+ document.querySelector('footer').innerHTML = `🌱 المزارع الصغير | AL MOZARE3 EL SAGHEER<br>Developed by <b>Samy Eid | سامي عيد</b><br>موسوعة نباتات الزينة | 390 نوعًا وصنفًا`;
+}
+function initFilters() {
+ let f = document.getElementById('filters');
+ f.innerHTML = `<button class="active" onclick="filterCat('all', this)">الكل (${plants.length})</button>`;
+ getCategories().forEach(cat => {
+  let count = plants.filter(p => p.category === cat).length;
+  let shortName = cat.split('. ')[1] || cat;
+  f.innerHTML += `<button onclick="filterCat('${cat}', this)">${shortName} (${count})</button>`;
+ });
+}
+let activeCat = 'all';
+function filterCat(cat, btn) {
+ activeCat = cat;
+ document.querySelectorAll('.filters button').forEach(b => b.classList.remove('active'));
+ btn.classList.add('active');
+ render();
+}
+function initAdminSelect() {
+ let sel = document.getElementById('adminPlant');
+ sel.innerHTML = '';
+ plants.forEach((p, idx) => {
+  let opt = document.createElement('option');
+  opt.value = idx;
+  opt.text = p.name + (p.latin ? ` (${p.latin})` : '');
+  sel.appendChild(opt);
+ });
+ sel.onchange = loadAdminProduct;
+ loadAdminProduct();
+}
+function loadAdminProduct() {
+ let idx = document.getElementById('adminPlant').value;
+ let inv = window.inventory[idx] || { price: '', stock: '', size: '' };
+ document.getElementById('adminPrice').value = inv.price;
+ document.getElementById('adminStock').value = inv.stock;
+ document.getElementById('adminSize').value = inv.size;
+}
+function saveProduct() {
+ let idx = document.getElementById('adminPlant').value;
+ window.inventory[idx] = {
+  price: document.getElementById('adminPrice').value,
+  stock: document.getElementById('adminStock').value,
+  size: document.getElementById('adminSize').value
+ };
+ saveInventory();
+ let t = translations[currentLang];
+ document.getElementById('saved').innerText = "✅ تم حفظ بيانات المنتج بنجاح!";
+ render();
+}
+function render() {
+ let q = document.getElementById('search').value.toLowerCase().trim();
+ let sort = document.getElementById('sort').value;
+ let t = translations[currentLang];
+ let list = plants.map((p, idx) => ({ ...p, originalIndex: idx, inv: window.inventory[idx] || {} }));
+ if (activeCat !== 'all') list = list.filter(p => p.category === activeCat);
+ if (q) list = list.filter(p => p.name.toLowerCase().includes(q) || p.latin.toLowerCase().includes(q) || p.category.toLowerCase().includes(q));
+ if (sort === 'az') list.sort((a, b) => a.name.localeCompare(b.name, 'ar'));
+ else if (sort === 'price') list.sort((a, b) => (parseFloat(a.inv.price) || 999999) - (parseFloat(b.inv.price) || 999999));
+ else if (sort === 'stock') list.sort((a, b) => (parseFloat(b.inv.stock) || 0) - (parseFloat(a.inv.stock) || 0));
+
+ document.getElementById('count').innerText = `عرض ${list.length} من أصل ${plants.length} نباتًا`;
+ let grid = document.getElementById('plants');
+ grid.innerHTML = '';
+ if (list.length === 0) {
+  grid.innerHTML = `<div class="empty"><h3>عذراً، لم نجد نتائج مطابقة لبحثك</h3><p>جرب البحث بكلمات أخرى أو اختر تصنيفاً مختلفاً.</p></div>`;
+  return;
+ }
+ list.forEach(p => {
+  let card = document.createElement('div');
+  card.className = 'card';
+  let priceText = p.inv.price ? `<div class="price">${p.inv.price} ج.م</div>` : `<div class="muted" style="font-size:12px">السعر غير محدد بالوحدة</div>`;
+  let stockText = p.inv.stock !== '' && p.inv.stock !== undefined ? `<span class="pill">${t.stockLabel} ${p.inv.stock}</span>` : `<span class="pill" style="background:#fce8e6;color:#c5221f">غير مضاف للمخزون</span>`;
+  let sizeText = p.inv.size ? `<div class="muted" style="font-size:11px">📏 ${p.inv.size}</div>` : '';
+  card.innerHTML = `
+   <div onclick="openModal(${p.originalIndex})" style="height:190px;background:linear-gradient(135deg,#e5f2e8,#f7faf7);display:flex;align-items:center;justify-content:center;color:#145b3b;font-size:42px;cursor:pointer">🌿</div>
+   <div class="cardbody">
+    <span class="pill" style="align-self:flex-start">${p.category.split('. ')[1] || p.category}</span>
+    <h3 onclick="openModal(${p.originalIndex})" style="cursor:pointer">${p.name}</h3>
+    <div class="latin">${p.latin}</div>
+    ${priceText}
+    ${sizeText}
+    <div>${stockText}</div>
+    <div class="card-actions">
+     <button class="light" onclick="openModal(${p.originalIndex})">${t.detailsBtn}</button>
+     <button onclick="window.open('https://wa.me/201272222886?text=مرحباً، أستفسر عن نبات: ${encodeURIComponent(p.name)}','_blank')">طلب واتساب</button>
+    </div>
+   </div>`;
+  grid.appendChild(card);
+ });
+}
+function openModal(idx) {
+ let p = plants[idx];
+ let inv = window.inventory[idx] || {};
+ let t = translations[currentLang];
+ document.getElementById('modalTitle').innerText = p.name;
+ document.getElementById('modalBody').innerHTML = `
+  <div style="height:220px;background:linear-gradient(135deg,#e5f2e8,#f7faf7);display:flex;align-items:center;justify-content:center;color:#145b3b;font-size:64px;border-radius:12px;margin-bottom:15px">🌿</div>
+  <div class="detailgrid">
+   <div class="detail"><b>${t.categoryLabel}</b>${p.category}</div>
+   <div class="detail"><b>الاسم العلمي (Latin)</b><span style="direction:ltr;display:inline-block">${p.latin || 'غير متوفر'}</span></div>
+   <div class="detail"><b>${t.priceLabel}</b>${inv.price ? inv.price + ' جنيه مصري' : 'يُحدد عند التواصل'}</div>
+   <div class="detail"><b>${t.stockLabel}</b>${inv.stock !== '' && inv.stock !== undefined ? inv.stock : 'غير مضاف'}</div>
+   <div class="detail"><b>${t.sizeLabel}</b>${inv.size || 'حسب المتوفر بالمشتل'}</div>
+  </div>
+  <p class="plant-desc"><b>نبذة عن العناية:</b> نبات زينة متميز يضفي جمالاً وحيوية على المكان. يحتاج إلى إضاءة مناسبة حسب طبيعته (ظل أو إضاءة ساطعة غير مباشرة) وري منتظم عند جفاف سطح التربة.</p>
+  <div style="text-align:center;margin-top:20px">
+   <a class="btn" href="https://wa.me/201272222886?text=مرحباً، أرغب في طلب نبات: ${encodeURIComponent(p.name)}" target="_blank" rel="noopener">اطلب هذا النبات عبر واتساب 📞</a>
+  </div>`;
+ document.getElementById('modal').style.display = 'block';
+}
+function closeModal() { document.getElementById('modal').style.display = 'none'; }
+document.getElementById('languageSelect').onchange = (e) => {
+ currentLang = e.target.value;
+ updateTexts();
+ initFilters();
+ render();
+};
+window.onload = () => {
+ initData();
+ updateTexts();
+ initFilters();
+ initAdminSelect();
+ render();
+};
+</script>
+</body>
+</html>
